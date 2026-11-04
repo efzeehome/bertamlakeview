@@ -1,7 +1,8 @@
-document.documentElement.classList.remove('no-js');
-
+// Existing EfzeeHome pricing, inquiry and gallery code, in its original execution order.
 (function (root, factory) {
-  root.EfzeeModel = factory();
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.EfzeeModel = api;
 })(typeof window !== 'undefined' ? window : this, function () {
   'use strict';
   const RATE = 300, DEPOSIT = 100;
@@ -64,10 +65,13 @@ document.documentElement.classList.remove('no-js');
   return { RATE, DEPOSIT, SOURCES, malaysiaToday, dateValue, nextDay, nightsBetween, quote, money, formatDate, normalizePhone, isValidPhone, validateBooking, buildInquiry };
 });
 
+;
 (() => {
   'use strict';
-  const M = window.EfzeeModel;
+  const M = typeof module === 'object' && module.exports ? module.exports : window.EfzeeModel;
+  if (typeof module === 'object' && module.exports) module.exports = M;
   if (typeof document === 'undefined') return;
+  document.documentElement.classList.remove('no-js');
   const menu = document.querySelector('.menu-toggle'), nav = document.getElementById('main-nav');
   function closeMenu() { nav.classList.remove('is-open'); menu.setAttribute('aria-expanded', 'false'); }
   menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; nav.classList.toggle('is-open', open); menu.setAttribute('aria-expanded', String(open)); });
@@ -123,11 +127,13 @@ document.documentElement.classList.remove('no-js');
   if ('IntersectionObserver' in window) new IntersectionObserver(entries => floating.classList.toggle('is-hidden', entries[0].isIntersecting), { rootMargin: '0px 0px -50px 0px', threshold: 0.05 }).observe(document.querySelector('.booking-section'));
 })();
 
+;
 (() => {
   'use strict';
+  if (typeof document === 'undefined') return;
   const cards = Array.from(document.querySelectorAll('.gallery-card'));
   const viewer = document.getElementById('photo-viewer');
-  // Photo links still open the originals when native dialogs are unavailable.
+  // Photo links still open full-size images when native dialogs are unavailable.
   if (!cards.length || !viewer || typeof viewer.showModal !== 'function') return;
   const photo = document.getElementById('photo-full');
   const title = document.getElementById('photo-title');

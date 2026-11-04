@@ -16,11 +16,13 @@
 @media(max-width:360px){.hero h1{font-size:57px}.hero-actions{gap:12px}.hero-actions .button{font-size:13px;padding-inline:12px;gap:10px}.hero-actions .text-link{font-size:12px}.field label>span{font-size:12px}.booking-card{padding-inline:16px}.date-fields{gap:9px}.field input{font-size:14px;padding-inline:7px}.booking-submit{font-size:13px}.fact{gap:8px;padding-inline:10px}.fact:first-child{padding-left:10px}.fact-text strong{font-size:13px}.fact-text span{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
-/* Real property photography. Original files remain available in the viewer. */
+/* Property photographs. Full-size images remain available in the viewer. */
 .gallery-section{border-bottom:1px solid var(--line)}
 .photo-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:34px 26px;margin-top:42px}
 .gallery-card{grid-column:span 3;min-width:0;display:block;border-radius:3px}
 .gallery-card.gallery-wide{grid-column:span 6}
+.gallery-card.gallery-shared{grid-column:span 4}
+.gallery-bedroom .gallery-image{aspect-ratio:3/4}
 .gallery-card figure{margin:0}
 .gallery-image{position:relative;overflow:hidden;background:var(--sage);border-radius:3px;aspect-ratio:4/5}
 .gallery-wide .gallery-image{aspect-ratio:4/3}
@@ -50,8 +52,8 @@
 .photo-viewer-caption>span{flex-shrink:0;font-size:13px;color:var(--muted);padding-top:5px}
 .photo-viewer-nav{border-top:1px solid var(--line);margin-top:18px;padding-top:15px}
 .photo-key-hint{font-size:12px;color:var(--muted);text-align:center}
-@media(max-width:900px){.photo-grid{gap:28px 20px}.gallery-card{grid-column:span 6}.gallery-card h3{font-size:23px}.gallery-card figcaption p{font-size:12px}}
-@media(max-width:600px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 16px;margin-top:28px}.gallery-card,.gallery-card.gallery-wide{grid-column:span 1}.gallery-card:first-child{grid-column:1/-1}.gallery-image,.gallery-wide .gallery-image{aspect-ratio:3/4}.gallery-card:first-child .gallery-image{aspect-ratio:4/3}.gallery-card h3{font-size:22px}.gallery-card figcaption{padding-top:12px;gap:7px}.gallery-number{display:none}.gallery-expand{font-size:12px;right:8px;bottom:8px;padding:6px 9px}.gallery-footnote{font-size:12px;margin-top:22px}.photo-viewer{width:calc(100% - 20px);max-height:calc(100dvh - 20px)}.photo-viewer-inner{padding:13px 12px}.photo-viewer-top{padding-bottom:12px;gap:10px}.photo-viewer-top .eyebrow{font-size:11px;letter-spacing:1px}.photo-stage img{max-height:60dvh}.photo-viewer-caption h3{font-size:21px}.photo-viewer-caption{gap:12px}.photo-viewer-caption>span{font-size:12px}.photo-viewer-nav{gap:10px;margin-top:14px;padding-top:12px}.photo-key-hint{display:none}.photo-control{font-size:13px;padding-inline:12px}}
+@media(max-width:900px){.photo-grid{gap:28px 20px}.gallery-card,.gallery-card.gallery-shared{grid-column:span 6}.gallery-card h3{font-size:23px}.gallery-card figcaption p{font-size:12px}}
+@media(max-width:600px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 16px;margin-top:28px}.gallery-card,.gallery-card.gallery-wide,.gallery-card.gallery-shared{grid-column:span 1}.gallery-card:first-child{grid-column:1/-1}.gallery-image,.gallery-wide .gallery-image{aspect-ratio:3/4}.gallery-card:first-child .gallery-image{aspect-ratio:4/3}.gallery-card h3{font-size:22px}.gallery-card figcaption{padding-top:12px;gap:7px}.gallery-number{display:none}.gallery-expand{font-size:12px;right:8px;bottom:8px;padding:6px 9px}.gallery-footnote{font-size:12px;margin-top:22px}.photo-viewer{width:calc(100% - 20px);max-height:calc(100dvh - 20px)}.photo-viewer-inner{padding:13px 12px}.photo-viewer-top{padding-bottom:12px;gap:10px}.photo-viewer-top .eyebrow{font-size:11px;letter-spacing:1px}.photo-stage img{max-height:60dvh}.photo-viewer-caption h3{font-size:21px}.photo-viewer-caption{gap:12px}.photo-viewer-caption>span{font-size:12px}.photo-viewer-nav{gap:10px;margin-top:14px;padding-top:12px}.photo-key-hint{display:none}.photo-control{font-size:13px;padding-inline:12px}}
 
 /* Readability refinements for the larger supporting text. */
 .fact>div{min-width:0}.fact span{line-height:1.5}.fact-text strong{line-height:1.35}.hero-actions{row-gap:16px}.field label{flex-wrap:wrap}.booking-submit{line-height:1.5}.art-label{max-width:calc(100% - 36px)}.photo-note{flex-wrap:wrap}.stay-summary{flex-wrap:wrap}.brand small{letter-spacing:1px;font-size:11px}.hero-art figcaption{letter-spacing:1px}
@@ -77,5 +79,5 @@ textarea{font:inherit;resize:vertical}.field textarea{display:block;width:100%;b
 .rule-confirmation span{min-width:0}
 @media(max-width:600px){.booking-rules{padding-inline:12px}.booking-rules legend{font-size:14px}.rule-confirmation{font-size:14px}}
 
-/* Keep the original direct WhatsApp fallback when JavaScript is disabled. */
+/* Preserve the existing JavaScript-disabled fallback without inline CSS. */
 .no-js #booking-form{display:none}
